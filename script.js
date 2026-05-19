@@ -42,7 +42,7 @@
     { name: "Diana",       cost: 3, traits: ["Sentencia", "contendiente"] },
     { name: "Maokai",      cost: 3, traits: ["N.O.V.A.", "Luchador"] },
     { name: "Illaoi",      cost: 3, traits: ["Ánima", "Vanguardia", "Pastor"] },
-    { name: "Lulu",        cost: 3, traits: ["Meeple", "Conducto"] },
+    { name: "Lulu",        cost: 3, traits: ["Astral", "Conducto"] },
     { name: "Rhaast",      cost: 3, traits: ["all"] },
     { name: "Mis Fortune", cost: 3, traits: ["Diosa de las pistolas","Atributo elegido" ] },
     { name: "Ornn",        cost: 3, traits: ["Onda espacial", "Bation"] },
