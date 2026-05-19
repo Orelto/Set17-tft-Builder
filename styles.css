@@ -1,0 +1,261 @@
+
+    /* ─── Reset y base ─── */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: 'Segoe UI', Arial, sans-serif;
+      background: #0e1015;
+      color: #e8e4d9;
+      min-height: 100vh;
+      padding: 24px 16px;
+    }
+
+    /* ─── Contenedor principal ─── */
+    .app {
+      max-width: 960px;
+      margin: 0 auto;
+    }
+
+    /* ─── Cabecera ─── */
+    .header {
+      margin-bottom: 28px;
+    }
+    .header h1 {
+      font-size: 24px;
+      font-weight: 600;
+      color: #e8e4d9;
+      margin-bottom: 4px;
+    }
+    .header p {
+      font-size: 13px;
+      color: #888780;
+    }
+
+    /* ─── Etiquetas de sección ─── */
+    .section-label {
+      font-size: 11px;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: #888780;
+      margin-bottom: 10px;
+    }
+
+    /* ─── Panel del equipo seleccionado ─── */
+    .selected-panel {
+      background: #1a1d24;
+      border: 1px solid #2a2d36;
+      border-radius: 12px;
+      padding: 16px 20px;
+      margin-bottom: 20px;
+      min-height: 70px;
+    }
+    .selected-chips {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-top: 10px;
+    }
+    .chip {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      background: #22252e;
+      border: 1px solid #3a3d46;
+      border-radius: 20px;
+      padding: 4px 10px;
+      font-size: 12px;
+      color: #e8e4d9;
+    }
+    .chip img {
+      width: 22px;
+      height: 22px;
+      border-radius: 50%;
+      object-fit: cover;
+    }
+    .chip-remove {
+      cursor: pointer;
+      color: #888780;
+      font-size: 16px;
+      line-height: 1;
+      margin-left: 2px;
+    }
+    .chip-remove:hover { color: #e24b4a; }
+    .empty-state { font-size: 13px; color: #555; margin-top: 8px; }
+
+    /* ─── Rasgos activos (contador) ─── */
+    .trait-counter-area { margin-bottom: 20px; }
+    .trait-counter { display: flex; flex-wrap: wrap; gap: 8px; }
+    .trait-count {
+      font-size: 12px;
+      padding: 4px 12px;
+      border-radius: 8px;
+      background: #1a1d24;
+      border: 1px solid #2a2d36;
+      color: #e8e4d9;
+    }
+    .trait-count .num {
+      font-weight: 700;
+      margin-left: 6px;
+      color: #7f77dd;
+    }
+
+    /* ─── Barra de filtros ─── */
+    .filter-bar {
+      display: flex;
+      gap: 10px;
+      margin-bottom: 14px;
+      flex-wrap: wrap;
+      align-items: center;
+    }
+    .filter-bar input {
+      flex: 1;
+      min-width: 180px;
+      font-size: 13px;
+      padding: 8px 12px;
+      border-radius: 8px;
+      border: 1px solid #2a2d36;
+      background: #1a1d24;
+      color: #e8e4d9;
+      outline: none;
+    }
+    .filter-bar input:focus { border-color: #7f77dd; }
+    .filter-bar input::placeholder { color: #555; }
+    .clear-btn {
+      font-size: 12px;
+      padding: 8px 14px;
+      border-radius: 8px;
+      border: 1px solid #2a2d36;
+      background: transparent;
+      color: #888780;
+      cursor: pointer;
+      transition: background 0.15s;
+    }
+    .clear-btn:hover { background: #22252e; color: #e8e4d9; }
+
+    /* ─── Filtros de rasgo (botones) ─── */
+    .trait-filters {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+      margin-bottom: 16px;
+    }
+    .trait-btn {
+      font-size: 11px;
+      padding: 4px 10px;
+      border-radius: 6px;
+      border: 1px solid #2a2d36;
+      background: #1a1d24;
+      color: #888780;
+      cursor: pointer;
+      transition: all 0.15s;
+    }
+    .trait-btn:hover { border-color: #7f77dd; color: #e8e4d9; }
+    .trait-btn.active { background: #2a2450; border-color: #7f77dd; color: #b5b0f5; font-weight: 600; }
+
+    /* ─── Grid de campeones ─── */
+    .grid-label {
+      font-size: 12px;
+      color: #888780;
+      margin-bottom: 10px;
+    }
+    .champ-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(88px, 1fr));
+      gap: 10px;
+      margin-bottom: 30px;
+    }
+
+    /* ─── Tarjeta de campeón ─── */
+    .champ-card {
+      position: relative;
+      background: #1a1d24;
+      border: 1.5px solid #2a2d36;
+      border-radius: 10px;
+      padding: 10px 6px 8px;
+      text-align: center;
+      cursor: pointer;
+      transition: border-color 0.15s, background 0.15s, transform 0.1s;
+      user-select: none;
+    }
+    .champ-card:hover { border-color: #4a4d56; background: #22252e; transform: translateY(-2px); }
+    .champ-card.selected { border-color: #7f77dd; background: #1e1c38; }
+    .champ-card.related { border-color: #1d9e75; background: #122820; }
+    .champ-card.dimmed { opacity: 0.35; }
+
+    .champ-img {
+      width: 56px;
+      height: 56px;
+      border-radius: 50%;
+      object-fit: cover;
+      display: block;
+      margin: 0 auto 7px;
+      border: 2px solid #2a2d36;
+      background: #22252e;
+    }
+    .champ-card.selected .champ-img { border-color: #7f77dd; }
+    .champ-card.related .champ-img { border-color: #1d9e75; }
+
+    .champ-name {
+      font-size: 11px;
+      color: #e8e4d9;
+      line-height: 1.2;
+      font-weight: 500;
+    }
+    .champ-traits {
+      font-size: 9px;
+      color: #666;
+      margin-top: 3px;
+      line-height: 1.4;
+    }
+    .champ-card.related .champ-traits { color: #2da882; }
+
+    /* ─── Badge de coste ─── */
+    .cost-badge {
+      position: absolute;
+      top: 5px;
+      right: 5px;
+      font-size: 10px;
+      font-weight: 700;
+      width: 18px;
+      height: 18px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .cost-1 { background: #3a3a3a; color: #aaa; }
+    .cost-2 { background: #1a3a1a; color: #5dca8a; }
+    .cost-3 { background: #1a2a4a; color: #5ba3e8; }
+    .cost-4 { background: #3a2a0a; color: #e713b9; }
+    .cost-5 { background: #3a1a2a; color: #f0e114; }
+
+    /* ─── Divider ─── */
+    hr { border: none; border-top: 1px solid #2a2d36; margin: 20px 0; }
+
+    /* ─── Leyenda ─── */
+    .legend {
+      display: flex;
+      gap: 16px;
+      flex-wrap: wrap;
+      margin-bottom: 20px;
+      font-size: 11px;
+      color: #888780;
+    }
+    .legend-item { display: flex; align-items: center; gap: 6px; }
+    .legend-dot {
+      width: 12px; height: 12px; border-radius: 50%;
+      border: 2px solid;
+    }
+    .legend-dot.sel { border-color: #7f77dd; background: #1e1c38; }
+    .legend-dot.rel { border-color: #1d9e75; background: #122820; }
+    .legend-dot.nor { border-color: #2a2d36; background: #1a1d24; }
+
+    /* ─── Footer ─── */
+    .footer {
+      text-align: center;
+      font-size: 11px;
+      color: #444;
+      margin-top: 20px;
+      padding-top: 16px;
+      border-top: 1px solid #2a2d36;
+    }

@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>TFT Set 17 — Constructor de Comps</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<div class="app">
+
+  <div class="header">
+    <h1>🌌 TFT Set 17 — Constructor de Comps</h1>
+    <p>Haz clic en un campeón para ver todos sus compañeros por rasgo. Selecciona hasta 8 para construir tu equipo.</p>
+  </div>
+
+  <!-- Leyenda -->
+  <div class="legend">
+    <div class="legend-item"><div class="legend-dot sel"></div> Seleccionado</div>
+    <div class="legend-item"><div class="legend-dot rel"></div> Comparte rasgo</div>
+    <div class="legend-item"><div class="legend-dot nor"></div> Sin coincidencia</div>
+  </div>
+
+  <!-- Panel equipo -->
+  <div class="selected-panel">
+    <div class="section-label">Tu equipo (<span id="teamCount">0</span> / 8)</div>
+    <div class="selected-chips" id="selectedChips">
+      <span class="empty-state">Selecciona campeones en la cuadrícula de abajo</span>
+    </div>
+  </div>
+
+  <!-- Rasgos activos -->
+  <div class="trait-counter-area" id="traitCounterArea" style="display:none">
+    <div class="section-label">Rasgos activos</div>
+    <div class="trait-counter" id="traitCounter"></div>
+    <hr>
+  </div>
+
+  <!-- Barra de búsqueda y botón limpiar -->
+  <div class="filter-bar">
+    <input type="text" id="searchInput" placeholder="🔍  Buscar por nombre o rasgo..." oninput="renderChamps()">
+    <button class="clear-btn" onclick="clearAll()">✕ Limpiar todo</button>
+  </div>
+
+  <!-- Filtros por rasgo -->
+  <div class="trait-filters" id="traitFilters"></div>
+
+  <!-- Grid -->
+  <div class="grid-label" id="gridLabel">Todos los campeones</div>
+  <div class="champ-grid" id="champGrid"></div>
+
+  <div class="footer">
+    TFT Set 17: Dioses Espaciales · Imágenes de Data Dragon (Riot Games) · Parche 17.3
+  </div>
+</div>
+    <!-- contenido HTML aquí -->
+
+    <script src="script.js"></script>
+</body>
+</html>
